@@ -1,4 +1,30 @@
 $component-name: 'l-about';
 
 .#{$component-name} {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap-reverse;
+  gap: 3rem;
+
+  &__image-container {
+    flex: 1 1 42rem;
+  }
+
+  &__image {
+    width: 100%;
+    object-fit: contain;
+  }
+
+  &__content {
+    flex: 1 1 42rem;
+  }
+
+  &__title {
+    @include titleText(3rem);
+  }
+
+  &__description {
+    @include graphText(1.5rem);
+    padding: 1rem 0;
+  }
 }
