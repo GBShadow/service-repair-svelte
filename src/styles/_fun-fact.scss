@@ -1,0 +1,35 @@
+$component-name: 'l-fun-fact';
+
+.#{$component-name} {
+  @include grid(25rem);
+  background-color: $light-bg;
+  gap: 3.5rem;
+
+  &__box {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  &__image {
+    height: 10rem;
+  }
+
+  &__value {
+    @include titleText(4rem);
+  }
+
+  &__description {
+    @include graphText(1.5rem);
+    padding-top: 0.5rem;
+  }
+
+  @media (max-width: 768px) {
+    padding: 5rem 2rem;
+
+    &__box {
+      flex-flow: column;
+      text-align: center;
+    }
+  }
+}

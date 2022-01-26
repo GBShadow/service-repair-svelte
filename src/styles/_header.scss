@@ -1,16 +1,128 @@
-.l-header {
+$component-name: 'l-header';
+
+.#{$component-name} {
   &__contact-info {
     padding: 2rem 10%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     background: $blue;
+  }
 
-    .info {
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-      color: $white;
+  &__info {
+    font-size: 1.5rem;
+    color: $white;
+
+    .icon {
+      padding-right: 0.5rem;
+      color: $yellow;
+    }
+  }
+
+  &__navbar {
+    padding: 2rem 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $white;
+    border-bottom: $border;
+    position: relative;
+
+    &.active {
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      border-bottom: none;
+      box-shadow: $box-shadow;
+    }
+
+    .menu-button {
+      font-size: 3rem;
+      cursor: pointer;
+      color: $black;
+      display: none;
+    }
+  }
+
+  &__logo {
+    @include titleText(2.5rem);
+    font-weight: bolder;
+
+    .icon {
+      color: $blue;
+    }
+  }
+
+  &__links {
+    .link {
+      @include titleText(2rem);
+
+      & + .link {
+        margin-left: 2rem;
+      }
+
+      &:hover {
+        text-decoration: underline;
+        color: $blue;
+      }
+    }
+  }
+
+  @media (max-width: 1200px) {
+    &__contact-info {
+      padding: 2rem 5%;
+    }
+
+    &__navbar {
+      padding: 2rem 5%;
+    }
+  }
+
+  @media (max-width: 991px) {
+    &__contact-info {
+      padding: 2rem;
+    }
+
+    &__navbar {
+      padding: 2rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .menu-button {
+      display: inline-block;
+    }
+
+    .menu-button.fa-times {
+      transform: rotate(180deg);
+    }
+
+    &__links {
+      position: absolute;
+      top: 99%;
+      left: 0;
+      right: 0;
+      background-color: $white;
+      border-bottom: $border;
+      border-top: $border;
+      clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+
+      &.active {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+      }
+
+      .link {
+        display: block;
+        margin: 2.5rem 2rem;
+        font-size: 2.5rem;
+      }
+    }
+  }
+
+  @media (max-width: 490px) {
+    &__contact-info {
+      display: none;
     }
   }
 }
