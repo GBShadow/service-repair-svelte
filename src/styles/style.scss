@@ -26,8 +26,8 @@ html {
   scroll-padding-top: 6rem;
 
   &::-webkit-scrollbar {
-    width: 1rem;
-    height: 1rem;
+    width: 0.5rem;
+    height: 0.5rem;
   }
 
   &::-webkit-scrollbar-track {
@@ -41,7 +41,7 @@ html {
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 @mixin grid($val) {
@@ -83,11 +83,36 @@ section {
   }
 }
 
-@import './header';
-@import './home';
-@import './fun-fact';
-@import './about';
-@import './services';
+.c-heading {
+  text-align: center;
+  margin-bottom: 3rem;
+  @include titleText(4rem);
+
+  span {
+    color: $blue;
+  }
+}
+
+@import "./header";
+@import "./home";
+@import "./fun-fact";
+@import "./about";
+@import "./services";
+@import "./gallery";
+@import "./facilities";
+@import "./team";
+
+@media (min-width: 1600px) {
+  section {
+    padding: 5rem 20%;
+  }
+}
+
+@media (min-width: 1440px) {
+  section {
+    padding: 5rem 15%;
+  }
+}
 
 @media (max-width: 1200px) {
   section {
@@ -108,9 +133,5 @@ section {
 @media (max-width: 450px) {
   html {
     font-size: 50%;
-  }
-
-  section {
-    padding: 5rem 10%;
   }
 }

@@ -1,0 +1,25 @@
+$component-name: 'l-gallery';
+
+.#{$component-name} {
+  &__container {
+    @include grid(30rem);
+  }
+
+  &__box {
+    height: 25rem;
+    overflow: hidden;
+    border-radius: 2px;
+
+    &:hover {
+      .#{$component-name}__image {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  &__image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}

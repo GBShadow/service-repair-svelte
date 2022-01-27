@@ -1,18 +1,18 @@
-$component-name: 'l-services';
+$component-name: "l-facilities";
 
 .#{$component-name} {
   background-color: $light-bg;
 
-  &__box-container {
+  &__container {
     @include grid(30rem);
   }
 
   &__box {
-    text-align: center;
     background-color: $white;
+    padding: 3rem;
+    text-align: center;
     border: $border;
     box-shadow: $box-shadow;
-    padding: 3rem 2rem;
 
     &:hover {
       background-color: $blue;
@@ -25,16 +25,16 @@ $component-name: 'l-services';
   }
 
   &__image {
-    height: 7rem;
+    height: 10rem;
     margin-bottom: 0.5rem;
   }
 
   &__title {
-    @include titleText(2rem);
     padding: 1rem 0;
+    @include titleText(2rem);
   }
 
   &__description {
-    @include graphText(1.5rem);
+    @include graphText(1.4rem);
   }
 }

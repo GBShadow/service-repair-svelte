@@ -1,4 +1,4 @@
-$component-name: 'l-header';
+$component-name: "l-header";
 
 .#{$component-name} {
   &__contact-info {
@@ -69,21 +69,29 @@ $component-name: 'l-header';
     }
   }
 
-  @media (max-width: 1200px) {
-    &__contact-info {
-      padding: 2rem 5%;
+  @media (min-width: 1600px) {
+    &__contact-info,
+    &__navbar {
+      padding: 2rem 20%;
     }
+  }
 
+  @media (min-width: 1440px) {
+    &__contact-info,
+    &__navbar {
+      padding: 2rem 15%;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    &__contact-info,
     &__navbar {
       padding: 2rem 5%;
     }
   }
 
   @media (max-width: 991px) {
-    &__contact-info {
-      padding: 2rem;
-    }
-
+    &__contact-info,
     &__navbar {
       padding: 2rem;
     }
