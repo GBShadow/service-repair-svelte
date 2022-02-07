@@ -1,0 +1,65 @@
+$component-name: "l-reviews";
+
+.#{$component-name} {
+  background-color: $light-bg;
+
+  &__box-container {
+    @include grid(30rem);
+  }
+
+  &__box {
+    text-align: center;
+    padding: 3rem;
+    background-color: $white;
+    box-shadow: $box-shadow;
+    border: $border;
+
+    &:hover {
+      background-color: $black;
+      .#{$component-name}__description-text {
+        color: $white;
+      }
+
+      .#{$component-name}__user-name {
+        color: $white;
+      }
+    }
+  }
+
+  &__stars {
+    color: $blue;
+    font-size: 1.7rem;
+  }
+
+  &__description {
+    position: relative;
+    z-index: 0;
+    padding: 1.5rem 0;
+  }
+
+  &__description-icon {
+    font-size: 7rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    opacity: 0.3;
+    color: $blue;
+  }
+
+  &__description-text {
+    @include graphText(1.5rem);
+  }
+
+  &__user-image {
+    height: 7rem;
+    width: 7rem;
+    border-radius: 50%;
+    margin-bottom: 0.5rem;
+  }
+
+  &__user-name {
+    @include titleText(1.7rem);
+  }
+}

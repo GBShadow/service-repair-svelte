@@ -1,7 +1,7 @@
-$component-name: 'l-fun-fact';
+$component-name: "l-fun-fact";
 
 .#{$component-name} {
-  @include grid(25rem);
+  @include grid(20rem);
   background-color: $light-bg;
   gap: 3.5rem;
 
